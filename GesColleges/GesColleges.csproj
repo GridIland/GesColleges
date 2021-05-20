@@ -1,0 +1,713 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{74E96440-2785-41C5-ABA2-B858807DD1A5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>GesColleges</RootNamespace>
+    <AssemblyName>GesColleges</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="ReachFramework" />
+    <Reference Include="sapbusinessobjects.wpf.viewer, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="SAPBusinessObjects.WPF.ViewerShared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Printing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="College.cs" />
+    <Compile Include="Core\ObsevalObject.cs" />
+    <Compile Include="Core\RelayCommand.cs" />
+    <Compile Include="Departement.cs" />
+    <Compile Include="Enseignant.cs" />
+    <Compile Include="Etats\Etat avancé\NotesMoyennesDep.xaml.cs">
+      <DependentUpon>NotesMoyennesDep.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\Etat avancé\SelectionDepart.xaml.cs">
+      <DependentUpon>SelectionDepart.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\Etat avancé\SelectionClg1.xaml.cs">
+      <DependentUpon>SelectionClg1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\Etat avancé\SelectionMat1.xaml.cs">
+      <DependentUpon>SelectionMat1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\MissMat.xaml.cs">
+      <DependentUpon>MissMat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\MatiereDisp.cs">
+      <DependentUpon>MatiereDisp.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Etats\BullNote.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BullNote.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Etats\Etat avancé\NotesMoyennesColg.xaml.cs">
+      <DependentUpon>NotesMoyennesColg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\Etat avancé\SelectionClg.xaml.cs">
+      <DependentUpon>SelectionClg.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\Etat avancé\SelectionMat.xaml.cs">
+      <DependentUpon>SelectionMat.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\ListeDepart.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListeDepart.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Etats\ListeEns.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ListeEns.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Etats\Bulletin.xaml.cs">
+      <DependentUpon>Bulletin.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\ListeEnseignant.xaml.cs">
+      <DependentUpon>ListeEnseignant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\ListeDepartement.xaml.cs">
+      <DependentUpon>ListeDepartement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\FicheEnseignant.xaml.cs">
+      <DependentUpon>FicheEnseignant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\FSEnseignant.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FSEnseignant.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Etats\FSEtudiant.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FSEtudiant.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Etats\FicheEtudiant.xaml.cs">
+      <DependentUpon>FicheEtudiant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Etats\NoteMoy2.cs">
+      <DependentUpon>NoteMoy2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Etats\NoteMoy1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>NoteMoy1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Etudiant.cs" />
+    <Compile Include="InteractionBase\Ajout2\AjoutCollege2.xaml.cs">
+      <DependentUpon>AjoutCollege2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout2\AjoutDepartement2.xaml.cs">
+      <DependentUpon>AjoutDepartement2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout2\AjoutEnseignant2.xaml.cs">
+      <DependentUpon>AjoutEnseignant2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout2\AjoutEtudiant2.xaml.cs">
+      <DependentUpon>AjoutEtudiant2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout2\AjoutMatiere2.xaml.cs">
+      <DependentUpon>AjoutMatiere2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout2\AjoutNote2.xaml.cs">
+      <DependentUpon>AjoutNote2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout2\AjoutSalle2.xaml.cs">
+      <DependentUpon>AjoutSalle2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Modifier\ModifCollege.xaml.cs">
+      <DependentUpon>ModifCollege.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Modifier\ModifDepartement.xaml.cs">
+      <DependentUpon>ModifDepartement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Modifier\ModifEnseignant.xaml.cs">
+      <DependentUpon>ModifEnseignant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Modifier\ModifEtudiant.xaml.cs">
+      <DependentUpon>ModifEtudiant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Modifier\ModifMatiere.xaml.cs">
+      <DependentUpon>ModifMatiere.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Modifier\ModifNote.xaml.cs">
+      <DependentUpon>ModifNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Modifier\ModifSalle.xaml.cs">
+      <DependentUpon>ModifSalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout\AjoutSalle.xaml.cs">
+      <DependentUpon>AjoutSalle.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout\AjoutNote.xaml.cs">
+      <DependentUpon>AjoutNote.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout\AjoutEtudiant.xaml.cs">
+      <DependentUpon>AjoutEtudiant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout\AjoutMatiere.xaml.cs">
+      <DependentUpon>AjoutMatiere.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout\AjoutEnseignant.xaml.cs">
+      <DependentUpon>AjoutEnseignant.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout\AjoutDepartement.xaml.cs">
+      <DependentUpon>AjoutDepartement.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="InteractionBase\Ajout\AjoutCollege.xaml.cs">
+      <DependentUpon>AjoutCollege.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Matiere.cs" />
+    <Compile Include="Migrations\202104142343332_InitialModel.cs" />
+    <Compile Include="Migrations\202104142343332_InitialModel.designer.cs">
+      <DependentUpon>202104142343332_InitialModel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104151131264_ForeignCorrectionDepartement.cs" />
+    <Compile Include="Migrations\202104151131264_ForeignCorrectionDepartement.designer.cs">
+      <DependentUpon>202104151131264_ForeignCorrectionDepartement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104190737442_ModificationTailleStringnomDprtmntCollge.cs" />
+    <Compile Include="Migrations\202104190737442_ModificationTailleStringnomDprtmntCollge.designer.cs">
+      <DependentUpon>202104190737442_ModificationTailleStringnomDprtmntCollge.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104231906354_AssociationCollegeEtudiant.cs" />
+    <Compile Include="Migrations\202104231906354_AssociationCollegeEtudiant.designer.cs">
+      <DependentUpon>202104231906354_AssociationCollegeEtudiant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202104231929326_AssociationCollegeEtudiant1.cs" />
+    <Compile Include="Migrations\202104231929326_AssociationCollegeEtudiant1.designer.cs">
+      <DependentUpon>202104231929326_AssociationCollegeEtudiant1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105021737061_ChangementnomCoetnomDep.cs" />
+    <Compile Include="Migrations\202105021737061_ChangementnomCoetnomDep.designer.cs">
+      <DependentUpon>202105021737061_ChangementnomCoetnomDep.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105070949286_AssociationNoteEnseignant.cs" />
+    <Compile Include="Migrations\202105070949286_AssociationNoteEnseignant.designer.cs">
+      <DependentUpon>202105070949286_AssociationNoteEnseignant.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202105070954517_AssociationNoteEnseignant2.cs" />
+    <Compile Include="Migrations\202105070954517_AssociationNoteEnseignant2.designer.cs">
+      <DependentUpon>202105070954517_AssociationNoteEnseignant2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="MVVM\ViewModel\CollegeViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\DepartementViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\EnseignantViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\EtudiantViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\HomeViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\MainViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\MatiereViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\NoteViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\SalleViewModel.cs" />
+    <Compile Include="MVVM\View\CollegeView.xaml.cs">
+      <DependentUpon>CollegeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\DepartementView.xaml.cs">
+      <DependentUpon>DepartementView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\EnseignantView.xaml.cs">
+      <DependentUpon>EnseignantView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\EtudiantView.xaml.cs">
+      <DependentUpon>EtudiantView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\HomeView.xaml.cs">
+      <DependentUpon>HomeView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\MatiereView.xaml.cs">
+      <DependentUpon>MatiereView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\NoteView.xaml.cs">
+      <DependentUpon>NoteView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MVVM\View\SalleView.xaml.cs">
+      <DependentUpon>SalleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Note.cs" />
+    <Compile Include="REPORTSDatasets\DataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTSDatasets\DataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTSDatasets\DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTSDatasets\DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTSDatasets\DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="REPORTSDatasets\DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Salle.cs" />
+    <Page Include="Etats\Etat avancé\NotesMoyennesDep.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Etats\Etat avancé\SelectionDepart.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Etats\Etat avancé\SelectionClg1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Etats\Etat avancé\SelectionMat1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Etats\MissMat.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Etats\Bulletin.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Etats\Etat avancé\NotesMoyennesColg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Etats\Etat avancé\SelectionClg.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Etats\Etat avancé\SelectionMat.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Etats\ListeEnseignant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Etats\ListeDepartement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Etats\FicheEnseignant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Etats\FicheEtudiant.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Images\icons.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout2\AjoutCollege2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout2\AjoutDepartement2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout2\AjoutEnseignant2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout2\AjoutEtudiant2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout2\AjoutMatiere2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout2\AjoutNote2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout2\AjoutSalle2.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Modifier\ModifCollege.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Modifier\ModifDepartement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Modifier\ModifEnseignant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Modifier\ModifEtudiant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Modifier\ModifMatiere.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Modifier\ModifNote.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Modifier\ModifSalle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout\AjoutSalle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout\AjoutNote.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout\AjoutEtudiant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout\AjoutMatiere.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout\AjoutEnseignant.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout\AjoutDepartement.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="InteractionBase\Ajout\AjoutCollege.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="GesCollegeContext.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MVVM\View\CollegeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\DepartementView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\EnseignantView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\EtudiantView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\HomeView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\MatiereView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\NoteView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\SalleView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\ButtonStyleTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\ComboboxStyleTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\MenuButtonTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Theme\TextBoxTheme.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Etats\MatiereDisp.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>MatiereDisp.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etats\BullNote.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>BullNote.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etats\FSEnseignant.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FSEnseignant.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etats\FSEtudiant.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>FSEtudiant.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etats\ListeDepart.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListeDepart.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etats\ListeEns.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ListeEns.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etats\NoteMoy2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NoteMoy2.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Etats\NoteMoy1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>NoteMoy1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104142343332_InitialModel.resx">
+      <DependentUpon>202104142343332_InitialModel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104151131264_ForeignCorrectionDepartement.resx">
+      <DependentUpon>202104151131264_ForeignCorrectionDepartement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104190737442_ModificationTailleStringnomDprtmntCollge.resx">
+      <DependentUpon>202104190737442_ModificationTailleStringnomDprtmntCollge.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104231906354_AssociationCollegeEtudiant.resx">
+      <DependentUpon>202104231906354_AssociationCollegeEtudiant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202104231929326_AssociationCollegeEtudiant1.resx">
+      <DependentUpon>202104231929326_AssociationCollegeEtudiant1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105021737061_ChangementnomCoetnomDep.resx">
+      <DependentUpon>202105021737061_ChangementnomCoetnomDep.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070949286_AssociationNoteEnseignant.resx">
+      <DependentUpon>202105070949286_AssociationNoteEnseignant.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202105070954517_AssociationNoteEnseignant2.resx">
+      <DependentUpon>202105070954517_AssociationNoteEnseignant2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="REPORTSDatasets\DataSet1.xsc">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet1.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet1.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTSDatasets\DataSet1.xss">
+      <DependentUpon>DataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet2.xsc">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet2.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet2.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTSDatasets\DataSet2.xss">
+      <DependentUpon>DataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet3.xsc">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet3.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet3.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTSDatasets\DataSet3.xss">
+      <DependentUpon>DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet4.xsc">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet4.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet4.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTSDatasets\DataSet4.xss">
+      <DependentUpon>DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet5.xsc">
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet5.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet5.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTSDatasets\DataSet5.xss">
+      <DependentUpon>DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet6.xsc">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="REPORTSDatasets\DataSet6.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSet6.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="REPORTSDatasets\DataSet6.xss">
+      <DependentUpon>DataSet6.xsd</DependentUpon>
+    </None>
+    <Resource Include="Fonts\Dosis.ttf" />
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\College.datasource" />
+    <None Include="Properties\DataSources\Departement.datasource" />
+    <None Include="Properties\DataSources\Enseignant.datasource" />
+    <None Include="Properties\DataSources\Etudiant.datasource" />
+    <None Include="Properties\DataSources\Matiere.datasource" />
+    <None Include="Properties\DataSources\Note.datasource" />
+    <None Include="Properties\DataSources\Salle.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="MVVM\Model\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="background.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Ce projet fait référence à des packages NuGet qui sont manquants sur cet ordinateur. Utilisez l'option de restauration des packages NuGet pour les télécharger. Pour plus d'informations, consultez http://go.microsoft.com/fwlink/?LinkID=322105. Le fichier manquant est : {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

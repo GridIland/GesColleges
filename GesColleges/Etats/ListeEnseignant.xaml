@@ -1,0 +1,15 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:GesColleges.Etats"
+        xmlns:Viewer="clr-namespace:SAPBusinessObjects.WPF.Viewer;assembly=SAPBusinessObjects.WPF.Viewer" x:Class="GesColleges.Etats.ListeEnseignant"
+        mc:Ignorable="d"
+        Title="FicheEnseignant" Height="800" Width="auto" Loaded="Window_Loaded" WindowStartupLocation="CenterScreen">
+    <Grid >
+
+        <Viewer:CrystalReportsViewer Name="CrystalListEns" HorizontalAlignment="Center" Height="auto" Margin="10,10,0,0" VerticalAlignment="Top" Width="auto" ShowLogo="False" ToggleSidePanel="None" ShowToolbar="True"/>
+
+    </Grid>
+</Window>

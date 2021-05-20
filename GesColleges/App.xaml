@@ -1,0 +1,52 @@
+﻿<Application x:Class="GesColleges.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:GesColleges"
+             xmlns:viewModel="clr-namespace:GesColleges.MVVM.ViewModel"
+             xmlns:view="clr-namespace:GesColleges.MVVM.View"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Theme/MenuButtonTheme.xaml"/>
+                <ResourceDictionary Source="Theme/TextboxTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ButtonStyleTheme.xaml"/>
+                <ResourceDictionary Source="Theme/ComboboxStyleTheme.xaml"/>
+                <ResourceDictionary Source="Images/icons.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+
+            <DataTemplate DataType="{x:Type viewModel:HomeViewModel}">
+                <view:HomeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:CollegeViewModel}">
+                <view:CollegeView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:DepartementViewModel}">
+                <view:DepartementView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EnseignantViewModel}">
+                <view:EnseignantView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:EtudiantViewModel}">
+                <view:EtudiantView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:MatiereViewModel}">
+                <view:MatiereView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:NoteViewModel}">
+                <view:NoteView/>
+            </DataTemplate>
+
+            <DataTemplate DataType="{x:Type viewModel:SalleViewModel}">
+                <view:SalleView/>
+            </DataTemplate>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>

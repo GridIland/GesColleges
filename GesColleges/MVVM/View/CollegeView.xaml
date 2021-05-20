@@ -1,0 +1,102 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:GesColleges.MVVM.View"
+             xmlns:GesColleges="clr-namespace:GesColleges" x:Class="GesColleges.MVVM.View.CollegeView"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Loaded="UserControl_Loaded">
+    <UserControl.Resources>
+        <CollectionViewSource x:Key="collegeViewSource" d:DesignSource="{d:DesignInstance {x:Type GesColleges:College}, CreateList=True}"/>
+    </UserControl.Resources>
+    <Grid DataContext="{StaticResource collegeViewSource}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="75"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="75"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button
+            Grid.Column="0"
+            Grid.Row="0"
+            x:Name="AjtBtn"
+            Content="Ajouter"
+            Click="AjtBtn_Click"
+            Style="{StaticResource ButtonTheme}"
+            />
+        <Button
+            Grid.Column="1"
+            Grid.Row="0"
+            x:Name="MdfBtn"
+            Content="Modifier"
+            Click="MdfBtn_Click"
+            Style="{StaticResource ButtonTheme}"
+            />
+        <Button
+            Grid.Column="2"
+            Grid.Row="0"
+            x:Name="SupBtn"
+            Content="Supprimer"
+            Style="{StaticResource ButtonTheme}" Click="SupBtn_Click"
+            />
+
+        <Button
+            Grid.Column="3"
+            Grid.Row="0"
+            x:Name="ResBtn"
+            Content="Actualiser"
+            Style="{StaticResource ButtonTheme}" Click="ResBtn_Click"
+            />
+
+        <ComboBox Style="{StaticResource ModernComboBox}" x:Name="CollegeComboBox" 
+                  Grid.Row="1" Grid.Column="1" Height="25" 
+                  >
+            <ComboBoxItem Content="Nom du Collège"  IsSelected="True"/>
+            <ComboBoxItem Content="Site du Collège"/>
+        </ComboBox>
+
+        <TextBox x:Name="blow"
+                 Grid.Row="1" 
+                 Grid.Column="2" 
+                 Style="{StaticResource ModernTextBox}"
+                 />
+
+        <TextBox x:Name="search"
+                 Grid.Row="1" 
+                 Grid.Column="2" 
+                 Background="Transparent"
+                 Foreground="Transparent"
+                 BorderThickness="0"
+                 Margin="35,30,30,30"
+                 TextChanged="search_TextChanged"
+                 />
+        <DataGrid x:Name="collegeDataGrid"
+                  AutoGenerateColumns="False" 
+                  Grid.ColumnSpan="2" Grid.Column="1" 
+                  EnableRowVirtualization="True" 
+                  ItemsSource="{Binding}" Grid.Row="2" 
+                  RowDetailsVisibilityMode="VisibleWhenSelected"
+                  Background="Transparent"
+                  RowHeight="30"
+                  FontSize="14"
+                  RowBackground="Transparent"
+                  CanUserResizeRows="False"
+                  CanUserResizeColumns="False"
+                  GridLinesVisibility="Horizontal"
+                  BorderThickness="0"
+                  IsReadOnly="True">
+            <DataGrid.Columns>
+                <DataGridTextColumn x:Name="idCollegeColumn" Binding="{Binding IdCollege}" Header="Id" Width="SizeToHeader"/>
+                <DataGridTextColumn x:Name="nomCoColumn" Binding="{Binding nomCo}"  Header="nom" Width="190"/>
+                <DataGridTextColumn x:Name="adresseSiteColumn" Binding="{Binding AdresseSite}" Header="Adresse Site" Width="190"/>
+            </DataGrid.Columns>
+        </DataGrid>
+    </Grid>
+</UserControl>
