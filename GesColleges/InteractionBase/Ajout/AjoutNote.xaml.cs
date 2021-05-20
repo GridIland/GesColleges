@@ -140,7 +140,7 @@ namespace GesColleges.InteractionBase.Ajout
         {
             if (noteControleTextBox.Text.Length > 1)
             {
-                if (int.Parse(noteControleTextBox.Text) > 20)
+                if (double.Parse(noteControleTextBox.Text) > 20)
                 {
                     MessageBox.Show("La note ne doit pas dépasser 20", "Erreur de Remplissage", MessageBoxButton.OK, MessageBoxImage.Error);
                     noteControleTextBox.Text = "0";
